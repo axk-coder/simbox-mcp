@@ -1,0 +1,7 @@
+map.txt
+task.md
+node_modules/
+dist/
+.env
+backend/
+*.log

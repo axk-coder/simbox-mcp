@@ -1,0 +1,17 @@
+{
+  "name": "simbox-mcp",
+  "version": "1.0.0",
+  "description": "MCP server hooking browser for SimBox 2.0 modding API",
+  "type": "module",
+  "main": "src/server.js",
+  "bin": {
+    "simbox-mcp": "./src/server.js"
+  },
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "ws": "^8.18.0"
+  }
+}

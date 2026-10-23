@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "SimBox MCP Bridge",
+  "version": "1.0.0",
+  "description": "Hooks SimBox 2.0 to MCP Server for Claude and Antigravity",
+  "host_permissions": [
+    "https://guttobear.github.io/simbox2.0/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://guttobear.github.io/simbox2.0/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ]
+}
