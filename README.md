@@ -1,6 +1,6 @@
 # SimBox MCP Server
 
-Model Context Protocol (MCP) server that hooks into browser sessions running SimBox 2.0 (https://guttobear.github.io/simbox2.0/) and exposes tools for the SimBox modding API.
+Model Context Protocol (MCP) server that hooks into browser sessions running SimBox 2.0 (https://guttobear.github.io/simbox2.0/) and exposes tools for the SimBox modding API and programmatic builder scripts.
 
 ## Requirements
 
@@ -57,7 +57,22 @@ google-chrome --remote-debugging-port=9222 https://guttobear.github.io/simbox2.0
 
 ## Available Tools
 
-When SimBox is open, the following tools are exposed to models:
+When SimBox is open, the following tools are exposed:
+
+### Construction & Temp Scripts
+- `simbox_run_builder_script`: Run temporary procedural construction scripts with the built-in `builder` API:
+  - `builder.house(x, y, width, height, { wall, roof, window, floor })`
+  - `builder.tower(x, y, width, height, { wall, floor, window })`
+  - `builder.box(x, y, width, height, { wall, fill, thickness })`
+  - `builder.pyramid(x, y, width, { material })`
+  - `builder.rect(x1, y1, x2, y2, elementKey, overrides)`
+  - `builder.hollowRect(x1, y1, x2, y2, elementKey, thickness, fillKey)`
+  - `builder.line(x1, y1, x2, y2, elementKey)`
+  - `builder.circle(cx, cy, radius, elementKey, filled)`
+  - `builder.set(x, y, elementKey, overrides)`
+- `simbox_build_structure`: Build structure presets (house, tower, box/tank, pyramid) with custom dimensions and material mappings.
+
+### Engine & Modding Tools
 - `simbox_status`: Connection state, grid dimensions, active mods, elements count.
 - `simbox_get_elements`: Inspect registered elements, categories, properties (density, flammable, etc.).
 - `simbox_set_element`: Register a custom element with behavior and onplace routines.
